@@ -13,11 +13,12 @@ export class ApiService {
 
   post(url: string, obj: any) {
     const body = JSON.stringify(obj);
-    // let cloneHeader: any = {};
-    // cloneHeader['Content-Type'] = 'application/json';
-    // const headerOptions = new HttpHeaders(cloneHeader);
+    let cloneHeader: any = {};
+    cloneHeader['dataType']= "json",
+    cloneHeader['Content-Type'] = 'application/json;charset=utf-8';
+    const headerOptions = new HttpHeaders(cloneHeader);
     return this._http
-      .post<any>(this.host + url, body)
+      .post<any>(this.host + url, body, { headers: headerOptions })
       .pipe(
         map(res => {
           return res;
