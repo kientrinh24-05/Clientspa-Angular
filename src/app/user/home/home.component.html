@@ -97,9 +97,8 @@
                 <h1>Spa & Beauty Services</h1>
             </div>
         </div>
-        <div class="owl-carousel service-carousel" style="display:block;">
-
-            <div class="service-item position-relative">
+        <div class="owl-carousel service-carousel row">
+            <div class="service-item position-relative col-lg-3">
                 <img class="img-fluid" src="../../../assets/img/service-1.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
@@ -110,56 +109,91 @@
                     </div>
                 </div>
             </div>
-
-            
+            <div class="service-item position-relative col-lg-3">
+                <img class="img-fluid" src="../../../assets/img/service-1.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo
+                        sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative col-lg-3">
+                <img class="img-fluid" src="../../../assets/img/service-1.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo
+                        sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative col-lg-3">
+                <img class="img-fluid" src="../../../assets/img/service-1.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo
+                        sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row justify-content-center bg-appointment mx-0">
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                     <h1 class="text-white text-center mb-4">Make Appointment</h1>
-                    <form>
+                    <form #form="ngForm" (ngSubmit)="onSubmit()"
+                        
+                    >
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent p-4" placeholder="Your Name"
-                                        required="required" />
+                                    <input  type="text" class="form-control bg-transparent p-4" placeholder="Your Name"
+                                        required="required" name="name" [(ngModel)]="userBooking.name"/>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent p-4" placeholder="Your Email"
-                                        required="required" />
+                                    <input  type="email" class="form-control bg-transparent p-4" placeholder="Your Email"
+                                        required="required" name="email" [(ngModel)]="userBooking.email" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input"
+                                    <input   type="text" class="form-control bg-transparent p-4" placeholder="Address"
+                                        required="required" name="address" [(ngModel)]="userBooking.address"  />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input  type="number" class="form-control bg-transparent p-4" placeholder="Phone"
+                                        required="required" name="phone" [(ngModel)]="userBooking.phone" />
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="date" id="date" name="date" data-target-input="nearest">
+                                        <input  type="text"  class="form-control bg-transparent p-4 datetimepicker-input"
                                             placeholder="Select Date" data-target="#date"
-                                            data-toggle="datetimepicker" />
+                                            data-toggle="datetimepicker" name="date" [(ngModel)]="userBooking.date"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input"
-                                            placeholder="Select Time" data-target="#time"
-                                            data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <select class="custom-select bg-transparent px-4" style="height: 47px;">
+                                    <select  class="custom-select bg-transparent px-4" style="height: 47px;" name="productId" [(ngModel)]="userBooking.productId">
                                         <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 1</option>
-                                        <option value="3">Service 1</option>
+                                        <option value="1" *ngFor="let item of users">Service {{item}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -451,3 +485,30 @@
         </div>
     </div>
     <!-- Testimonial End -->
+
+    <script>
+         $(".service-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1500,
+        loop: true,
+        dots: false,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            576: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            },
+            1200: {
+                items: 5
+            }
+        }
+    });
+    </script>
