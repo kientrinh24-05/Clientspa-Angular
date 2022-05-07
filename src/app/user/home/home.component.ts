@@ -5,6 +5,7 @@ import { BaseComponent } from 'src/app/lib/base-component';
 import { BookingServiceService } from '../../lib/booking-service.service';
 import { Bookingapp } from '../../lib/bookingapp.model';
 import * as moment from 'moment';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import * as moment from 'moment';
 })
 export class HomeComponent extends BaseComponent implements OnInit {
   
+
   public images: any;
   public formdata: any;
   public users: any;
