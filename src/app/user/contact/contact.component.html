@@ -9,36 +9,36 @@
             </div>
             <div class="col-lg-6 pt-5 pb-lg-5">
                 <div class="contact-form bg-light p-4 p-lg-5 my-lg-5">
-                    <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Contact</h6>
-                    <h1 class="mb-4">Contact For Any Query</h1>
+                    <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Liên hệ</h6>
+                    <h1 class="mb-4">Đặt bất cứ liên hệ nào</h1>
                     <div id="success"></div>
                     <form name="sentMessage" id="contactForm" novalidate="novalidate" #form="ngForm" (ngSubmit)="onSubmit()">
                         <div class="form-row">
                             <div class="col-sm-6 control-group">
-                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name"
+                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Họ tên"
                                     required="required" data-validation-required-message="Please enter your name" name="name" [(ngModel)]="contactModel.name"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="col-sm-6 control-group">
-                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email"
+                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Email"
                                     required="required" data-validation-required-message="Please enter your email" name="email" [(ngModel)]="contactModel.email"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
-                            <input name="subject" [(ngModel)]="contactModel.subject" type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject"
+                            <input name="subject" [(ngModel)]="contactModel.subject" type="text" class="form-control border-0 p-4" id="subject" placeholder="Chủ đề "
                                 required="required" data-validation-required-message="Please enter a subject" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control border-0 py-3 px-4" rows="3" id="message" placeholder="Message"
+                            <textarea class="form-control border-0 py-3 px-4" rows="3" id="message" placeholder="Nội dung"
                                 required="required"
                                 data-validation-required-message="Please enter your message" name="message" [(ngModel)]="contactModel.message"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send
-                                Message</button>
+                            <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Gửi liên hệ
+                            </button>
                         </div>
                     </form>
                 </div>
