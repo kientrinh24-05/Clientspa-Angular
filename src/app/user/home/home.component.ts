@@ -18,6 +18,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   public images: any;
   public formdata: any;
   public users: any;
+  public contacts: any;
   public user: any;
   public totalRecords: any;
   public pageSize = 10;
@@ -52,6 +53,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   }
   ngOnInit(): void {
     this.search();
+    this.getContact();
   }
 
   // createBooking(value:any)  {
@@ -77,6 +79,17 @@ export class HomeComponent extends BaseComponent implements OnInit {
       this.totalRecords = res.totalItems;
       this.pageSize = res.pageSize;
     });
+  }
+
+  getContact () {
+    this.page = 1;
+    this.pageSize = 10
+    this._api.post('/api/v1/contact/contact_get_list_paging_sort_search_filter',{pageNumber: this.pageNumber, pageSize: this.pageSize,sortCase:this.sortCase,ascSort:this.ascSort}).subscribe(res => {
+      this.userss = res.data.content.slice(0,4);
+    
+      this.totalRecords =  res.totalItems;
+      this.pageSize = res.pageSize;
+      });
   }
 
   onSubmit() {
