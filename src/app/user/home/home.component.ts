@@ -111,7 +111,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   getContact() {
     this.page = 1;
     this.pageSize = 10
-    this._api.post('/api/v1/contact/contact_get_list_paging_sort_search_filter', { pageNumber: this.pageNumber, pageSize: this.pageSize, sortCase: this.sortCase, ascSort: this.ascSort }).subscribe(res => {
+    this._api.post('/api/v1/contact/contact_get_list_paging_sort_search_filter', { pageNumber: this.pageNumber, pageSize: this.pageSize, sortCase: this.sortCase, ascSort: this.ascSort ,status:this.status }).subscribe(res => {
       this.userss = res.data.content.slice(0, 4);
 
       this.totalRecords = res.totalItems;
